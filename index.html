@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Friend form</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="#">
+        <h1>Apply for my friend</h1>
+        <div class="group">
+          <input
+            type="text"
+            id="name"
+            class="text-input"
+            placeholder="name"
+            pattern="[A-Za-z]{1,10}"
+            required
+          />
+          <label for="name" class="text-label">name</label>
+        </div>
+        <div class="group">
+          <input
+            type="text"
+            id="country"
+            class="text-input"
+            placeholder="country"
+            pattern="[A-Za-z]{1,10}"
+          />
+          <label for="country" class="text-label">country</label>
+        </div>
+        <div class="group">
+          <input
+            type="email"
+            id="email"
+            class="text-input"
+            placeholder="email"
+            required
+          />
+          <label for="email" class="text-label">email</label>
+        </div>
+        <div class="group">
+          <select id="zodiac" name="zodiacsign" style="border-radius: 0">
+            <option value="" selected data-default>zodiac sign</option>
+            <option value="aries">aries</option>
+            <option value="taurus">taurus</option>
+            <option value="gemini">gemini</option>
+            <option value="cancer">cancer</option>
+            <option value="leo">leo</option>
+            <option value="virgo">virgo</option>
+            <option value="libra">libra</option>
+            <option value="scorpio">scorpio</option>
+            <option value="capricorn">capricorn</option>
+            <option value="sagittarius">sagittarius</option>
+            <option value="aquarius">aquarius</option>
+            <option value="pisces">pisces</option>
+          </select>
+        </div>
+        <div class="group">
+          <p>I prefer:</p>
+          <div class="radio1">
+            <input
+              type="radio"
+              id="pepsi"
+              class="radio-input"
+              name="pepsicola"
+            />
+            <label for="pepsi" class="radio-label">
+              <span class="radio-button"></span> pepsi</label
+            >
+          </div>
+          <div class="radio2">
+            <input
+              type="radio"
+              id="cola"
+              class="radio-input"
+              name="pepsicola"
+            />
+            <label for="cola" class="radio-label">
+              <span class="radio-button"></span> cola</label
+            >
+          </div>
+        </div>
+        <div class="group">
+          <p>Lastly:</p>
+          <input
+            type="checkbox"
+            id="friday"
+            value="friday"
+            class="checkbox-input"
+            required
+          />
+          <label for="friday" class="checkbox-label">
+            <span class="checkbox-button"></span> I want to go out on
+            Friday</label
+          >
+        </div>
+        <button type="submit">submit</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

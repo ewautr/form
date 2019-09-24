@@ -1,0 +1,260 @@
+:root {
+  --color-primary: #d6b9ff;
+  --color-secondary: #ae8ae0;
+  --color-font: #bababa;
+  --color-label: #808080;
+  --color-border-green: #39e89e;
+  --color-border-red: #c11017;
+  --color-bg: rgba(0, 0, 0, 0.808);
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+  font-size: 10px;
+  font-family: "Helvetica Neue", sans-serif;
+  /* background-color: var(--color-primary); */
+  background-image: linear-gradient(
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  background-size: cover;
+  color: var(--color-font);
+}
+
+.container {
+  width: 90vw;
+  max-width: 50rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: var(--color-bg);
+  border-radius: 2%;
+}
+
+form {
+  width: 80%;
+  margin: auto;
+}
+
+h1 {
+  font-size: 4.5rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  color: var(--color-border-green);
+}
+
+.group {
+  margin-bottom: 5rem;
+}
+
+/* ---------------------INPUTS */
+
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-primary);
+
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--color-font);
+}
+
+.text-input {
+  width: 50%;
+}
+
+input:focus {
+  border-bottom: 1px solid var(--color-border-green);
+  outline: none;
+}
+
+input:focus:invalid {
+  border-bottom: 1px solid var(--color-border-red);
+  outline: none;
+}
+
+input::placeholder {
+  font-family: inherit;
+  font-weight: 200;
+  color: var(--color-label);
+}
+
+/* ---------------------LABELS */
+label {
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+.text-label {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in;
+}
+
+input:placeholder-shown + .text-label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-1rem);
+}
+
+/* ---------------------SELECT */
+select {
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 50%;
+
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-primary);
+
+  font-size: 2rem;
+  color: var(--color-font);
+  font-weight: 400;
+}
+
+select:focus {
+  outline: none;
+  border-bottom: 1px solid var(--color-border-green);
+}
+
+select option[data-default] {
+  display: none;
+}
+
+select:first-child {
+  color: var(--color-label);
+  font-weight: 200;
+}
+
+/* ---------------------RADIO */
+p {
+  font-size: 2rem;
+  color: var(--color-label);
+  font-weight: 200;
+
+  margin-bottom: 1.3rem;
+}
+
+.radio1,
+.radio2 {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.radio-input {
+  display: none;
+}
+
+.radio-label {
+  position: relative;
+  padding-left: 3rem;
+  font-weight: 400;
+}
+
+.radio-button {
+  height: 2rem;
+  width: 2rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 0.2rem;
+  left: 0;
+}
+
+.radio-button::after {
+  content: "";
+  display: block;
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-primary);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.radio-input:checked ~ .radio-label .radio-button::after {
+  opacity: 1;
+}
+
+/* ---------------------CHECKBOX */
+
+.checkbox-label {
+  position: relative;
+  padding-left: 3rem;
+  font-weight: 400;
+}
+
+.checkbox-input {
+  display: none;
+}
+
+.checkbox-button {
+  height: 2rem;
+  width: 2rem;
+  border: 1px solid var(--color-primary);
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.checkbox-button::after {
+  content: "";
+  display: block;
+  height: 1.3rem;
+  width: 1.3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-primary);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.checkbox-input:checked ~ .checkbox-label .checkbox-button::after {
+  opacity: 1;
+}
+
+/* ---------------------BUTTON */
+
+button {
+  display: block;
+  width: 17rem;
+  height: 4rem;
+  margin: 2rem auto;
+
+  background-color: var(--color-border-green);
+  border: none;
+  border-radius: 1.5rem;
+  outline: none;
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--color-bg);
+
+  transition: all 0.1s ease-in;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(1.02) translateY(0.2rem);
+}
